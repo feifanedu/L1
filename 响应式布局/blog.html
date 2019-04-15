@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				margin: 0px;
+			}
+			
+			.wrap{
+				width: 1024px;
+				margin: 0px auto;
+			}
+			
+			.wrap>*{
+				margin-bottom: 10px;
+			}
+			.left{
+				float: left;
+			}
+			
+			.right{
+				float: right;
+			}
+			
+			.clear:after{
+				display: block;
+				content: "";
+				clear: both;
+			}
+			
+			
+			nav .item{
+				width: 500px;
+				height: 100px;
+				background-color: grey;
+			}
+			
+			header{
+				width: 100%;
+				height: 200px;
+				background-color: gainsboro;
+			}
+			
+			section .item{
+				width: 334px;
+				margin-right: 11px;
+				height: 150px;
+				float: left;
+				background-color: red;
+			}
+			section .item:last-child{
+				margin-right: 0;
+			}
+			
+			footer .item{
+				height: 60px;
+				width: 250px;
+				margin-right:8px;
+				float: left;
+				background-color: green;
+			}
+			footer .item:last-child{
+				margin-right: 0;
+			}
+			
+			@media only screen and (max-width:1024px) {
+				.wrap{
+					width: 100%;
+				}
+				nav .item{
+					width: 100%;
+					margin-bottom: 10px;
+				}
+				
+				section .item{
+					width: 100%;
+					margin-bottom: 10px;
+					margin-right: 0px;
+				}
+				
+				footer .item{
+					margin-right: 0;
+					width: 48%;
+					margin-bottom: 10px;
+				}
+				
+				footer .item:nth-child(2n){
+					float: right;
+				}
+			}
+			
+			@media only screen and (max-width:768px ) {
+				footer .item{
+					width: 100%;
+				}
+				
+				footer .item:nth-child(2n+1){
+					float: left;
+				}
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		<div class="wrap">
+			<nav class="clear">
+				<div class="item left"></div>
+				<div class="item right"></div>
+			</nav>
+			<header></header>
+			
+			<section class="clear">
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+			</section>
+			
+			<footer>
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+			</footer>
+		</div>
+	</body>
+</html>
