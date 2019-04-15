@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.music{
+				width: 320px;
+				height: 80px;
+				background-color: grey;
+				padding: 20px;
+			}
+			.music>div{
+				float: left;
+			}
+			
+			.music .image{}
+			.music .image img{
+				width: 80px;
+				height: 80px;
+				border-radius: 40px;
+			}
+			
+			.btn-group{
+				padding-top:27px;
+				padding-left: 20px;
+			}
+			
+			.btn-group .btn{
+				float: left;
+				margin-right: 10px;
+				background-image: url(images/ico_btn_player.png);
+				background-repeat: no-repeat;
+			}
+			.btn-prev{
+				position: relative;
+				top:3px;
+				width:16px;
+				height:20px;
+				background-position:-90px 0;
+			}
+			.btn-next{
+				position: relative;
+				top:3px;
+				width:16px;
+				height:20px;
+				background-position:-90px -30px;
+			}
+			
+			.btn-play{
+				width:22px;
+				height:26px;
+				background-position:-90px -60px;
+			}
+			
+			.btn-pause{
+				width:22px;
+				height:26px;
+				background-position:-90px -90px;
+			}
+			
+			.music-info{
+				float: right;
+				padding-top: 26px;
+			}
+			.music-info p{
+				text-align: right;
+				margin: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			1. 从上往下
+			2. 从左往右
+			3. 从外往里
+			4. 色块定位
+		-->
+		<div class="music">
+			
+			<div class="image">
+				<img src="images/kuaizixiongdi.jpeg">
+			</div>
+			<div class="btn-group">
+				<div class="btn btn-prev"></div>
+				<div class="btn btn-pause btn-play"></div>
+				<div class="btn btn-next"></div>
+			</div>
+			<div class="music-info">
+				<input type="range" name="" id="" value="0" value="" />
+				<p>00:00/00:00</p>
+			</div>
+			<audio src="media/小苹果.mp3" id="music" ></audio>
+		</div>
+		
+	</body>
+</html>
