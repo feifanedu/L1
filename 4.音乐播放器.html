@@ -19,6 +19,8 @@
 				width: 80px;
 				height: 80px;
 				border-radius: 40px;
+				-webkit-animation: rotate 5s 0s linear infinite;
+				-webkit-animation-play-state: paused;
 			}
 			
 			.btn-group{
@@ -67,6 +69,15 @@
 				text-align: right;
 				margin: 0px;
 			}
+			
+			@-webkit-keyframes rotate{
+				from{
+					-webkit-transform: rotate(0deg);
+				}
+				to{
+					-webkit-transform: rotate(360deg);
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -83,15 +94,64 @@
 			</div>
 			<div class="btn-group">
 				<div class="btn btn-prev"></div>
-				<div class="btn btn-pause btn-play"></div>
+				<div class="btn btn-play"></div>
 				<div class="btn btn-next"></div>
 			</div>
 			<div class="music-info">
-				<input type="range" name="" id="" value="0" value="" />
+				<input type="range" name="" id="" min="0" max="100" value="0" value="" />
 				<p>00:00/00:00</p>
 			</div>
 			<audio src="media/小苹果.mp3" id="music" ></audio>
 		</div>
+		
+		<script type="text/javascript">
+			
+			// 获取音乐文件对象
+			var mp3 = document.getElementById("music");
+			var playBtn = document.querySelector(".btn-play");
+			var image = document.querySelector(".image img");
+			
+			
+			playBtn.onclick = function(){
+				
+				if(mp3.paused){
+					mp3.play();
+					this.className = "btn btn-pause";
+					image.style.webkitAnimationPlayState = "running";
+				}else{
+					mp3.pause();
+					this.className = "btn btn-play";
+					image.style.webkitAnimationPlayState = "paused";
+				}
+				
+				
+			}
+			
+			
+			
+			// 播放
+//			var t= setTimeout(function(){
+//				mp3.play();
+//			},5000);
+			
+			
+			var t2 = setTimeout(function(){
+				// 暂停
+//				mp3.pause();
+				// 暂停状态
+				console.log(mp3.paused);
+				// 总时长
+				console.log(mp3.duration);
+				// 当前的进度
+				console.log(mp3.currentTime);
+				
+			},5000);
+			
+			
+			
+			
+			
+		</script>
 		
 	</body>
 </html>
